@@ -5,9 +5,12 @@ for(let controller in controllers){
     ng.controllers.push(controllers[controller]);
 }
 
-routes.define(function($routeProvider){
+routes.define(($routeProvider) => {
 	$routeProvider
+        .when('/list', {
+            action: 'list'
+        })
 		.otherwise({
 			action: 'defaultView'
 		});
-})
+});
